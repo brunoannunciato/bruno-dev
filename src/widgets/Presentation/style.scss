@@ -10,6 +10,10 @@ section.presentation {
 		line-height: 32px;
 
 		span { font-weight: 300; }
+
+		@media (max-width: 920px) {
+			font-size: 2em;
+		}
 	}
 
 	h2 {
