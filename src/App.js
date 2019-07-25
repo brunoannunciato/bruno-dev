@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import './app.scss';
+
+import Icon from './components/Icons';
+
+import Menu from './widgets/Menu'
 import Presentation from './widgets/Presentation';
 import ContactShelf from './widgets/ContactShelf';
-import Icon from './components/Icons';
-import './app.scss';
 
 class App extends Component {
 	constructor () {
@@ -31,6 +34,12 @@ class App extends Component {
 						this.setState({ activeMenu: true })
 					}} 
 				/>
+
+				<Menu
+					menuActive={this.state.activeMenu}
+					closeClick={() => { this.setState({ activeMenu: false }) } }
+				>
+				</Menu>
 			</div>		
 		)
 	}

@@ -6,7 +6,7 @@ export default class Icons extends Component {
 		return (
 			<a
 				href={this.props.url}
-				className={`icon-${this.props.icon}`} 
+				className={`icon-${this.props.icon} ${this.props.className}`} 
 				target={this.props.target === undefined ? 'blank' : this.props.target} 
 				title={this.props.icon}
 				onClick={this.props.handleClick}

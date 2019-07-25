@@ -1,0 +1,25 @@
+.menu {
+    background-color: #ddd;
+    box-shadow: 5px 0px 10px 0px rgba(0,0,0,0.75);
+    box-sizing: border-box;
+    height: 100vh;
+    padding-left: 50px;
+    padding-top: 50px;
+    position: absolute;
+    left: 0;
+    transition: transform .4s ease;
+    top: 0;
+    width: 15%;
+    transform: translateX(-105%);
+    
+    &.active {
+        transform: translateX(0);
+    }
+
+    .icon-close-menu {
+        bottom: 50px;
+        cursor: pointer;
+        left: 50px;
+        position: absolute;
+    }
+}
