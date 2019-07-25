@@ -1,6 +1,9 @@
 $icomoon-font-family: "icomoon" !default;
 $icomoon-font-path: "fonts" !default;
 
+$icon-menu: "\e9bd";
+$icon-cross: "\ea0f";
+$icon-arrow-left2: "\ea40";
 $icon-mail2: "\ea84";
 $icon-instagram: "\ea92";
 $icon-twitter: "\ea96";
@@ -8,6 +11,8 @@ $icon-steam2: "\eaad";
 $icon-github: "\eab0";
 $icon-linkedin: "\eac9";
 $icon-codepen: "\eae8";
+
+
 
 
 
@@ -37,40 +42,55 @@ $icon-codepen: "\eae8";
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-menu {
+  &:before {
+    content: $icon-menu; 
+  }
+}
+.icon-cross {
+  &:before {
+    content: $icon-cross; 
+  }
+}
+.icon-arrow-left2 {
+  &:before {
+    content: $icon-arrow-left2; 
+  }
+}
 .icon-mail2 {
-	&:before {
-		content: $icon-mail2; 
-	}
+  &:before {
+    content: $icon-mail2; 
+  }
 }
 .icon-instagram {
-	&:before {
-		content: $icon-instagram; 
-	}
+  &:before {
+    content: $icon-instagram; 
+  }
 }
 .icon-twitter {
-	&:before {
-		content: $icon-twitter; 
-	}
+  &:before {
+    content: $icon-twitter; 
+  }
 }
 .icon-steam2 {
-	&:before {
-		content: $icon-steam2; 
-	}
+  &:before {
+    content: $icon-steam2; 
+  }
 }
 .icon-github {
-	&:before {
-		content: $icon-github; 
-	}
+  &:before {
+    content: $icon-github; 
+  }
 }
 .icon-linkedin {
-	&:before {
-		content: $icon-linkedin; 
-	}
+  &:before {
+    content: $icon-linkedin; 
+  }
 }
 .icon-codepen {
-	&:before {
-		content: $icon-codepen;
-	}
+  &:before {
+    content: $icon-codepen; 
+  }
 }
 
 a[class*=icon],

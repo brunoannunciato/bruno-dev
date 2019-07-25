@@ -27,9 +27,9 @@ export default class ContactShelf extends Component {
 		]
 
 		return (
-			iconsObj.map((icn) => {
+			iconsObj.map((icn, idx) => {
 				return(
-					<Icons icon={icn.icon} url={icn.url}/>
+					<Icons icon={icn.icon} key={icn+idx} url={icn.url}/>
 				)
 			})
 		);
