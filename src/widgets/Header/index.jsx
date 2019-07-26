@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import Icon from '../../components/Icons';
+import { Link } from "react-router-dom";
 
 import Menu from '../Menu';
+
+const sitePages = [
+	{
+		title: 'About',
+		link: '/about'
+	},{
+		title: 'Jobs',
+		link:'/jobs'
+	}
+]
 
 export default class Header extends Component {
 	render() {
@@ -20,7 +31,15 @@ export default class Header extends Component {
 						this.props.activePage(false)
 					}}
 				>
-					<li onClick={this.props.activePage}>Sobre</li>
+
+				{ sitePages.map(item => {
+					return(
+						<li key={item.title} onClick={this.props.activePage}>
+							<Link to={item.link}>{item.title}</Link>
+						</li>
+					)
+				}) }
+
 				</Menu>
 			</>
 		)

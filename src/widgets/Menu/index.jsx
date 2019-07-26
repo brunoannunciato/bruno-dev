@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 import Icon from '../../components/Icons';
@@ -13,12 +14,13 @@ export default class Menu extends Component {
                     {this.props.children}
                 </ul>
 
-                <Icon
-                    icon="cross"
-                    className="icon-close-menu"
-                    handleClick={this.props.closeClick}
-                >
-                </Icon>
+                <Link to='/'>
+                    <Icon
+                        icon="cross"
+                        className="icon-close-menu"
+                        handleClick={this.props.closeClick}
+                    />
+                </Link>
             </nav>
         )
     }
