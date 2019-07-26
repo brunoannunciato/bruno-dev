@@ -12,6 +12,10 @@
     width: 15%;
     transform: translateX(-105%);
     z-index: 2;
+
+    @media (max-width: 920px) {
+        width: 65%;
+    }
     
     &.active {
         transform: translateX(0);

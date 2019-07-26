@@ -30,7 +30,10 @@ class App extends Component {
 					toggleMenu={ () => this.setState({ activeMenu: !this.state.activeMenu }) }
 				/>
 
-				<PageContent active={this.state.activePage}></PageContent>
+				<PageContent
+					active={this.state.activePage}
+					back={() => {this.setState({ activePage: false })}}
+				/>
 			</div>
 		)
 	}
