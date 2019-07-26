@@ -9,8 +9,15 @@ import PageContent from './widgets/PageContent';
 class App extends Component {
 	state = {
 		activeMenu: false,
-		activePage: false,
-		pageSelected: 'none'
+		activePage: false
+	}
+
+	componentWillMount = () => {
+		window.location.pathname !== '/' &&
+		this.setState({
+			activeMenu: true,
+			activePage: true
+		})
 	}
 
 	render = () => {
