@@ -1,0 +1,16 @@
+section.page-content {
+    background-color: #eee;
+    box-shadow: 5px 0px 10px 0px rgba(0,0,0,0.5);
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    transform: translateX(-105%);
+    transition: transform .8s ease;
+    
+    &.active {
+        transform: translateX(0);
+    }
+}

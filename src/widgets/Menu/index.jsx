@@ -4,10 +4,14 @@ import './style.scss';
 import Icon from '../../components/Icons';
 
 export default class Menu extends Component {
-    render() {
+
+    render () {
         return (
-            <div className={`menu ${this.props.menuActive ? 'active' : ''}`}>
-                { this.props.children }
+            <nav className={`menu ${this.props.menuActive ? 'active' : ''}`}>
+
+                <ul>
+                    {this.props.children}
+                </ul>
 
                 <Icon
                     icon="cross"
@@ -15,7 +19,7 @@ export default class Menu extends Component {
                     handleClick={this.props.closeClick}
                 >
                 </Icon>
-            </div>
+            </nav>
         )
     }
 }
