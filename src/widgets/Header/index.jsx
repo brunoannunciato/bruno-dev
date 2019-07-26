@@ -34,7 +34,7 @@ export default class Header extends Component {
 
 				{ sitePages.map(item => {
 					return(
-						<li key={item.title} onClick={this.props.activePage}>
+						<li key={item.title} onClick={this.props.activePage} className='menu__item'>
 							<Link to={item.link}>{item.title}</Link>
 						</li>
 					)
