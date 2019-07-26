@@ -26,12 +26,12 @@
 			@keyframes item-animation {
 				from {
 					opacity: 0;
-					transform: translateX(-60px);
+					transform: translateX(-60px) skewY(20deg);
 				}
 
 				to {
 					opacity: 1;
-					transform: translateX(0);
+					transform: translateX(0) skewY(0);
 				}
 			}
 		}
