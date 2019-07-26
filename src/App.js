@@ -26,7 +26,7 @@ class App extends Component {
 
 				<Header
 					activeMenu={ this.state.activeMenu }
-					activePage={ () => { this.setState({ activePage: !this.state.activePage })} }
+					activePage={ (activePage = true) => { this.setState({ activePage })} }
 					toggleMenu={ () => this.setState({ activeMenu: !this.state.activeMenu }) }
 				/>
 

@@ -17,7 +17,7 @@ export default class Header extends Component {
 					menuActive={ this.props.activeMenu }
 					closeClick={ () => {
 						this.props.toggleMenu()
-						this.props.activePage()
+						this.props.activePage(false)
 					}}
 				>
 					<li onClick={this.props.activePage}>Sobre</li>
