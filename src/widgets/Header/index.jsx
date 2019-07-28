@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Icon from '../../components/Icons';
 import { Link } from "react-router-dom";
+import resume from '../Menu/cv-bruno-annunciato.pdf';
 
 import Menu from '../Menu';
 
@@ -41,6 +42,12 @@ export default class Header extends Component {
 						</li>
 					)
 				}) }
+
+				<li className='menu__item'>
+					<a href={resume} target='_blank' rel='noopener noreferrer'>
+						Resume
+					</a>
+				</li>
 
 				</Menu>
 			</>

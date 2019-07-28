@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.scss';
 
 import thumbBrastemp from './imgs/brastemp-chatbot.png';
 import thumbConsul from './imgs/consul-bf.png';
