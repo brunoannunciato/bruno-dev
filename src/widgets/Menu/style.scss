@@ -2,12 +2,12 @@
 	background-color: #ddd;
 	box-shadow: 5px 0px 10px 0px rgba(0,0,0,0.5);
 	box-sizing: border-box;
-	height: 100vh;
+	min-height: 100vh;
 	padding-left: 50px;
 	padding-top: 50px;
-	position: absolute;
+	position: fixed;
 	left: 0;
-	transition: transform .4s ease;
+	transition: transform .4s ease-out;
 	top: 0;
 	width: 15%;
 	transform: translateX(-105%);
