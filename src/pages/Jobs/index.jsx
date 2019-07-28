@@ -23,6 +23,7 @@ import thumbDiscovery from './imgs/discovery.png';
 
 import JobsShelf from '../../widgets/JobsShelf';
 import JobThumbnail from '../../components/JobThumbnail';
+import ImageZoom from '../../components/ImageZoom';
 
 const jobsList = {
 	jussi: [
@@ -137,6 +138,10 @@ const jobsList = {
 }
 
 export default class Jobs extends Component {
+	state = {
+		zoomImage: ''
+	}
+
 	createThumbnail = (entity) => {
 		return jobsList[entity].map( item => {
 			return (
@@ -145,7 +150,7 @@ export default class Jobs extends Component {
 					image={item.img}
 					name={item.name}
 					languages={!item.plataform ? `${item.stack}` : `${item.stack} , ${item.plataform}`}
-					// plataform={item.plataform}
+					handleClick={() => {this.setState({zoomImage: item.img})}}
 				/>
 			)
 		});
@@ -153,29 +158,38 @@ export default class Jobs extends Component {
 
 	render () {
 		return (
-			<div className="jobs">
-				<JobsShelf
-					title='Jüssi'
-				>
-					{this.createThumbnail('jussi')}
-				</JobsShelf>
+			<>
+				<div className="jobs">
+					<JobsShelf
+						title='Jüssi'
+					>
+						{this.createThumbnail('jussi')}
+					</JobsShelf>
 
-				<JobsShelf
-					title='Freelance'
-				>
-					{this.createThumbnail('freelance')}
-				</JobsShelf>
+					<JobsShelf
+						title='Freelance'
+					>
+						{this.createThumbnail('freelance')}
+					</JobsShelf>
 
-				<JobsShelf
-					title='Personal'
-				>
-					{this.createThumbnail('individual')}
-				</JobsShelf>
+					<JobsShelf
+						title='Personal'
+					>
+						{this.createThumbnail('individual')}
+					</JobsShelf>
 
-				<p className="disclaimer">
-					*Some of the projects were developed as a team
-				</p>
-			</div>
+					<p className="disclaimer">
+						*Some of the projects were developed as a team
+					</p>
+				</div>
+				{
+					this.state.zoomImage !== '' &&
+					<ImageZoom
+						image={this.state.zoomImage}
+						close={() => {this.setState({zoomImage: ''})}}
+					/>
+				}
+			</>
 		)
 	}
 }

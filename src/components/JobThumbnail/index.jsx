@@ -5,7 +5,7 @@ import './style.scss';
 export default class JobThumbnail extends Component  {
     render () {
         return (
-            <div className="thumbnail">
+            <div className="thumbnail" onClick={this.props.handleClick}>
                 <figure>
                     <img src={this.props.image} alt=""/>
                 </figure>
