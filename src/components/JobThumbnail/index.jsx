@@ -6,9 +6,11 @@ export default class JobThumbnail extends Component  {
     render () {
         return (
             <div className="thumbnail" onClick={this.props.handleClick}>
-                <figure>
-                    <img src={this.props.image} alt=""/>
-                </figure>
+                <a href={this.props.link} target='_blank' rel="noopener noreferrer">
+                    <figure>
+                        <img src={this.props.image} alt=""/>
+                    </figure>
+                </a>
                 <p className='thumbnail__title'><strong>Project: </strong>{this.props.name}</p>
                 <div className="thumbnail__technologies">
                     <p className="languages"><strong>technologies: </strong>{this.props.languages}</p>

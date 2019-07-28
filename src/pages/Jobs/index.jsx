@@ -31,37 +31,44 @@ const jobsList = {
 			img: thumbBrastemp,
 			name: 'Brastemp Chatbot',
 			stack: 'React.js, SCSS',
-			plataform: 'Vtex IO'
+			plataform: 'Vtex IO',
+			link: '//www.brastemp.com.br/atendimento/assistente-virtual'
 		}, {
 			img: thumbConsul,
 			name: 'Consul Black Friday Landing',
 			stack: 'HTML, SCSS, JS',
-			plataform: 'Vtex'
+			plataform: 'Vtex',
+			link: '//loja.consul.com.br/landing/blackfriday'
 		}, {
 			img: thumbCompraCerta,
 			name: 'Compra Certa Black Friday Landing',
 			stack: 'HTML, SCSS, JS',
-			plataform: 'Vtex'
+			plataform: 'Vtex',
+			link: '//loja.compracerta.com.br/landing/blackfriday'
 		}, {
 			img: thumbBblend,
 			name: 'Bblend store',
 			stack: 'HTML, SCSS, JS',
-			plataform: 'Vtex'
+			plataform: 'Vtex',
+			link: '//loja.bblend.com.br'
 		}, {
 			img: thumbUber,
 			name: 'Uber for business Help Center',
 			stack:'HTML, SCSS, JS, PHP',
-			plataform: 'Wordpress'
+			plataform: 'Wordpress',
+			link: '//uberforbusinesshelp.com'
 		}, {
 			img: thumbPortalPos,
 			name: 'Blog Portal Pós',
 			stack:'HTML, SCSS, JS, PHP',
-			plataform: 'Wordpress'
+			plataform: 'Wordpress',
+			link: '//blog.portalpos.com.br'
 		}, {
 			img: thumbItau,
 			name: 'Itaú Apple Pay Landing',
 			stack: 'HTML, SCSS, JS',
-			plataform: 'Vignette'
+			plataform: 'Vignette',
+			link: '//www.itau.com.br/cartoes/carteira-digital/apple-pay/'
 		}, {
 			img: thumbPdv,
 			name: 'Ambev Pedida de hoje',
@@ -71,12 +78,14 @@ const jobsList = {
 			img: thumbHondaAccord,
 			name: 'Honda Accord Release Page',
 			stack: 'HTML, SASS, JS, PHP',
-			plataform: null
+			plataform: null,
+			link: '//www.honda.com.br/automoveis/accord'
 		}, {
 			img: thumbMotorola,
 			name: 'Motorola Latam stores',
 			stack: 'HTML, SCSS, JS',
-			plataform: 'Vtex'
+			plataform: 'Vtex',
+			link: '//motorola.com.br'
 		}
 	],
 	freelance: [
@@ -84,12 +93,14 @@ const jobsList = {
 			img: thumbUnopar,
 			name: 'Unopar site',
 			stack: 'Pug, Stylus, JS',
-			plataform: null
+			plataform: null,
+			link: 'http://unopar.br'
 		}, {
 			img: thumbConsulFacilita,
 			name: 'Consul Simples assim infographics',
 			stack: 'HTML, SCSS',
-			plataform: 'Wordpress'
+			plataform: 'Wordpress',
+			link: '//www.consul.com.br/facilita-consul/simples-assim/como-limpar-ar-condicionado-split/'
 		}, {
 			img: thumbContteudo,
 			name: 'Contteudo default layout',
@@ -99,7 +110,8 @@ const jobsList = {
 			img: thumbConnection,
 			name: 'Connection-ai',
 			stack:'HTML, SCSS, JS, PHP',
-			plataform: 'Wordpress'
+			plataform: 'Wordpress',
+			link: '//connection-ai.com'
 		}
 	],
 	individual: [
@@ -107,22 +119,26 @@ const jobsList = {
 			img: thumbBrunoShow,
 			name: 'bruno.show',
 			stack: 'HTML, CSS, JS',
-			plataform: null
+			plataform: null,
+			link: '//bruno.show'
 		}, {
 			img: thumbBrunoDev,
 			name: 'bruno.dev',
 			stack: 'React.js, SCSS',
-			plataform: null
+			plataform: null,
+			link: '//bruno.dev'
 		}, {
 			img: thumbJoanelson,
 			name: 'Joanelson Game',
 			stack: 'HTML, CSS, JS',
-			plataform: null
+			plataform: null,
+			link: '//joanelson.bruno.show'
 		}, {
 			img: thumbLavadungeon,
 			name: 'Lava Dungeon Game',
 			stack: 'HTML, CSS',
-			plataform: null
+			plataform: null,
+			link: '//lavadungeon.bruno.show'
 		}, {
 			img: thumbIllumind,
 			name: 'Illumind',
@@ -150,7 +166,8 @@ export default class Jobs extends Component {
 					image={item.img}
 					name={item.name}
 					languages={!item.plataform ? `${item.stack}` : `${item.stack} , ${item.plataform}`}
-					handleClick={() => {this.setState({zoomImage: item.img})}}
+					handleClick={() => {!item.link && this.setState({zoomImage: item.img})}}
+					link={item.link}
 				/>
 			)
 		});
@@ -183,7 +200,7 @@ export default class Jobs extends Component {
 					</p>
 				</div>
 				{
-					this.state.zoomImage !== '' &&
+					this.state.zoomImage !== '' && window.innerWidth > 920 &&
 					<ImageZoom
 						image={this.state.zoomImage}
 						close={() => {this.setState({zoomImage: ''})}}
