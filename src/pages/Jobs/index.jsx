@@ -171,6 +171,10 @@ export default class Jobs extends Component {
 				>
 					{this.createThumbnail('individual')}
 				</JobsShelf>
+
+				<p className="disclaimer">
+					*Some of the projects were developed as a team
+				</p>
 			</div>
 		)
 	}
