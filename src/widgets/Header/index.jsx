@@ -32,6 +32,8 @@ export default class Header extends Component {
 					}}
 				>
 
+				<li className={`logo ${this.props.showLogo ? 'show' : '' }`}>Bruno Annunciato</li>
+
 				{ sitePages.map(item => {
 					return(
 						<li key={item.title} onClick={this.props.activePage} className='menu__item'>

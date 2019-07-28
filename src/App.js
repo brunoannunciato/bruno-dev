@@ -32,6 +32,7 @@ class App extends Component {
 				</section>
 
 				<Header
+					showLogo={ this.state.activePage }
 					activeMenu={ this.state.activeMenu }
 					activePage={ (activePage = true) => { this.setState({ activePage })} }
 					toggleMenu={ () => this.setState({ activeMenu: !this.state.activeMenu }) }

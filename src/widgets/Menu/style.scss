@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 	min-height: 100vh;
 	padding-left: 50px;
-	padding-top: 50px;
+	padding-top: 20px;
 	position: fixed;
 	left: 0;
 	transition: transform .4s ease-out;
@@ -35,6 +35,17 @@
 				}
 			}
 		}
+	}
+
+	.logo {
+		transform: translateX(-120%);
+		transition: transform .6s ease-out;
+		margin-bottom: 40px;
+		list-style: none;
+		font-weight: bold;
+		font-size: 1.15em;
+
+		&.show { transform: translateX(0); }
 	}
 
 	.icon-close-menu {

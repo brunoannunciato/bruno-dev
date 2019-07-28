@@ -14,7 +14,7 @@ export default class About extends Component {
 								<img src={profileImage} alt="Bruno Annunciato"/>
 							</figure>
 							<h1 className="text">
-								Bruno Annunciato
+								Me,
 							</h1>
 							<p className="text">
 								21 years old, São Paulo - Brazil
