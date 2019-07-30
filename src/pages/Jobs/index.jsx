@@ -24,7 +24,7 @@ import thumbDiscovery from './imgs/discovery.png';
 
 import JobsShelf from '../../widgets/JobsShelf';
 import JobThumbnail from '../../components/JobThumbnail';
-import ImageZoom from '../../components/ImageZoom';
+// import ImageZoom from '../../components/ImageZoom';
 
 const jobsList = {
 	jussi: [
@@ -200,13 +200,13 @@ export default class Jobs extends Component {
 						*Some of the projects were developed as a team
 					</p>
 				</div>
-				{
+				{/* {
 					this.state.zoomImage !== '' && window.innerWidth > 920 &&
 					<ImageZoom
 						image={this.state.zoomImage}
 						close={() => {this.setState({zoomImage: ''})}}
 					/>
-				}
+				} */}
 			</>
 		)
 	}
