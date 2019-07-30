@@ -168,7 +168,7 @@ export default class Jobs extends Component {
 					name={item.name}
 					languages={!item.plataform ? `${item.stack}` : `${item.stack} , ${item.plataform}`}
 					handleClick={() => {!item.link && this.setState({zoomImage: item.img})}}
-					link={`${item.link}?utm_campaign=brunodev`}
+					link={item.link}
 				/>
 			)
 		});

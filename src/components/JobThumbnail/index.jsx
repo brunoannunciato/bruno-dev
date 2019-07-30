@@ -3,10 +3,14 @@ import React, { Component } from 'react';
 import './style.scss';
 
 export default class JobThumbnail extends Component  {
+    componentDidMount = () => {
+        console.log(this.props.link); 
+    }
+
     render () {
         return (
             <div className="thumbnail" onClick={this.props.handleClick}>
-                <a href={this.props.link} target='_blank' rel="noopener noreferrer">
+                <a href={this.props.link !== undefined ? this.props.link + '?utm_campaign=brunodev' : 'javascript:void(0)'} target='_blank' rel="noopener noreferrer">
                     <figure>
                         <img src={this.props.image} alt=""/>
                     </figure>
