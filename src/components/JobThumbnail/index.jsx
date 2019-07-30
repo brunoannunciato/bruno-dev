@@ -7,7 +7,7 @@ export default class JobThumbnail extends Component  {
 	render () {
 		return (
 			<div className="thumbnail" onClick={this.props.handleClick}>
-				<a href={this.props.link !== undefined ? this.props.link + '?utm_campaign=brunodev' : 'javascript:void(0)'} target='_blank' rel="noopener noreferrer">
+				<a href={this.props.link ? this.props.link + '?utm_campaign=brunodev' : 'javascript:void(0)'} target='_blank' rel="noopener noreferrer">
 					<figure>
 						<img src={this.props.image} alt=""/>
 					</figure>

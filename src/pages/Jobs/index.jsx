@@ -159,7 +159,7 @@ export default class Jobs extends Component {
 		zoomImage: ''
 	}
 
-	createThumbnail = (entity) => {
+	createThumbnail = entity => {
 		return jobsList[entity].map( item => {
 			return (
 				<JobThumbnail
