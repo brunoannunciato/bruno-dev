@@ -1,27 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
 import Icon from '../../components/Icons';
 
-export default class Menu extends Component {
+const Menu = props => {
 
-    render () {
-        return (
-            <nav className={`menu ${this.props.menuActive ? 'active' : ''}`}>
+	return (
+		<nav className={`menu ${props.menuActive ? 'active' : ''}`}>
+			<ul>
+				{props.children}
+			</ul>
 
-                <ul>
-                    {this.props.children}
-                </ul>
-
-                <Link to='/'>
-                    <Icon
-                        icon="cross"
-                        className="icon-close-menu"
-                        handleClick={this.props.closeClick}
-                    />
-                </Link>
-            </nav>
-        )
-    }
+			<Link to='/'>
+				<Icon
+					icon="cross"
+					className="icon-close-menu"
+					handleClick={props.closeClick}
+				/>
+			</Link>
+		</nav>
+	)
 }
+
+export default Menu;

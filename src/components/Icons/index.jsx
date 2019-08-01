@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.scss';
 
-export default class Icons extends Component {
-	render() {
-		return (
-			<a
-				href={this.props.url}
-				className={`icon-${this.props.icon} ${this.props.className}`} 
-				target={this.props.target === undefined ? 'blank' : this.props.target} 
-				title={this.props.icon}
-				onClick={this.props.handleClick}
-			>
-				{this.props.childrean}
-			</a>
-		)
-	}
+const Icons = props => {
+	return (
+		<a
+			href={props.url}
+			className={`icon-${props.icon} ${props.className}`} 
+			target={props.target === undefined ? 'blank' : props.target} 
+			title={props.icon}
+			onClick={props.handleClick}
+		>
+			{props.childrean}
+		</a>
+	)
 }
+
+export default Icons;

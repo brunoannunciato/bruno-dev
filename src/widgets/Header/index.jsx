@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Icon from '../../components/Icons';
 import { Link } from "react-router-dom";
 import resume from '../Menu/cv-bruno-annunciato.pdf';
@@ -15,42 +15,42 @@ const sitePages = [
 	}
 ]
 
-export default class Header extends Component {
-	render() {
-		return (
-			<>
-				<Icon
-					icon="menu"
-					className="menu-icon"
-					handleClick={ this.props.toggleMenu }
-				/>
+const Header = props => {
+	return (
+		<>
+			<Icon
+				icon="menu"
+				className="menu-icon"
+				handleClick={ props.toggleMenu }
+			/>
 
-				<Menu
-					menuActive={ this.props.activeMenu }
-					closeClick={ () => {
-						this.props.toggleMenu()
-						this.props.activePage(false)
-					}}
-				>
+			<Menu
+				menuActive={ props.activeMenu }
+				closeClick={ () => {
+					props.toggleMenu()
+					props.activePage(false)
+				}}
+			>
 
-				<li className={`logo ${this.props.showLogo ? 'show' : '' }`}>Bruno Annunciato</li>
+			<li className={`logo ${props.showLogo ? 'show' : '' }`}>Bruno Annunciato</li>
 
-				{ sitePages.map(item => {
-					return(
-						<li key={item.title} onClick={this.props.activePage} className='menu__item'>
-							<Link to={item.link}>{item.title}</Link>
-						</li>
-					)
-				}) }
+			{ sitePages.map(item => {
+				return(
+					<li key={item.title} onClick={props.activePage} className='menu__item'>
+						<Link to={item.link}>{item.title}</Link>
+					</li>
+				)
+			}) }
 
-				<li className='menu__item'>
-					<a href={resume} target='_blank' rel='noopener noreferrer'>
-						Resume
-					</a>
-				</li>
+			<li className='menu__item'>
+				<a href={resume} target='_blank' rel='noopener noreferrer'>
+					Resume
+				</a>
+			</li>
 
-				</Menu>
-			</>
-		)
-	}
+			</Menu>
+		</>
+	)
 }
+
+export default Header;

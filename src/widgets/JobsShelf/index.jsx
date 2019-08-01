@@ -1,17 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import './style.scss';
 
-export default class JobsShelf extends Component {
-    render () {
-        return (
-            <div className="shelf">
-                <h2 className="shelf__title">
-                    {this.props.title}
-                </h2>
+const JobsShelf= props => {
 
-                {this.props.children}
-            </div>
-        )
-    }
+	return (
+		<div className="shelf">
+			<h2 className="shelf__title">
+				{ props.title }
+			</h2>
+
+			{ props.children }
+		</div>
+	)
 }
+
+export default JobsShelf;

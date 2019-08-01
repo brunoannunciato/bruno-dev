@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.scss';
 import Icons from '../../components/Icons';
 
-export default class ContactShelf extends Component {
-	constructShelf = () => {
+const ContactShelf = () => {
+	const constructShelf = () => {
 		const iconsObj = [
 			{
 				icon: 'twitter',
@@ -35,11 +35,11 @@ export default class ContactShelf extends Component {
 		);
 	}
 
-	render() {
-		return (
-			<div className="ContactShelf">
-				{ this.constructShelf() }
-			</div>
-		)
-	}
+	return (
+		<div className="ContactShelf">
+			{ constructShelf() }
+		</div>
+	)
 }
+
+export default ContactShelf;

@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './style.scss';
 
-export default class JobThumbnail extends Component  {
-
-	render () {
-		return (
-			<div className="thumbnail" onClick={this.props.handleClick}>
-				<a href={this.props.link ? this.props.link + '?utm_campaign=brunodev' : 'javascript:void(0)'} target='_blank' rel="noopener noreferrer">
-					<figure>
-						<img src={this.props.image} alt=""/>
-					</figure>
-				</a>
-				<p className='thumbnail__title'><strong>Project: </strong>{this.props.name}</p>
-				<div className="thumbnail__technologies">
-					<p className="languages"><strong>technologies: </strong>{this.props.languages}</p>
-				</div>
+const JobThumbnail = props => {
+	return (
+		<div className="thumbnail" onClick={props.handleClick}>
+			<a href={props.link ? props.link + '?utm_campaign=brunodev' : 'javascript:void(0)'} target='_blank' rel="noopener noreferrer">
+				<figure>
+					<img src={props.image} alt=""/>
+				</figure>
+			</a>
+			<p className='thumbnail__title'><strong>Project: </strong>{props.name}</p>
+			<div className="thumbnail__technologies">
+				<p className="languages"><strong>technologies: </strong>{props.languages}</p>
 			</div>
-		)
-	}
+		</div>
+	)
 }
+
+export default JobThumbnail;
