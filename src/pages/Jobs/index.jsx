@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './style.scss';
 
 import thumbBrastemp from './imgs/brastemp-chatbot.png';
@@ -154,12 +154,11 @@ const jobsList = {
 	]
 }
 
-export default class Jobs extends Component {
-	state = {
-		zoomImage: ''
-	}
+const Jobs= () => {
+	const [zoomImage, setZoomImage] = useState('');
 
-	createThumbnail = entity => {
+
+	const createThumbnail = entity => {
 		return jobsList[entity].map( item => {
 			return (
 				<JobThumbnail
@@ -167,47 +166,47 @@ export default class Jobs extends Component {
 					image={item.img}
 					name={item.name}
 					languages={!item.plataform ? `${item.stack}` : `${item.stack} , ${item.plataform}`}
-					handleClick={() => {!item.link && this.setState({zoomImage: item.img})}}
+					handleClick={() => {!item.link && setZoomImage(item.img)}}
 					link={item.link}
 				/>
 			)
 		});
 	}
 
-	render () {
-		return (
-			<>
-				<div className="jobs">
-					<JobsShelf
-						title='Jüssi'
-					>
-						{this.createThumbnail('jussi')}
-					</JobsShelf>
+	return (
+		<>
+			<div className="jobs">
+				<JobsShelf
+					title='Jüssi'
+				>
+					{createThumbnail('jussi')}
+				</JobsShelf>
 
-					<JobsShelf
-						title='Freelance'
-					>
-						{this.createThumbnail('freelance')}
-					</JobsShelf>
+				<JobsShelf
+					title='Freelance'
+				>
+					{createThumbnail('freelance')}
+				</JobsShelf>
 
-					<JobsShelf
-						title='Personal'
-					>
-						{this.createThumbnail('individual')}
-					</JobsShelf>
+				<JobsShelf
+					title='Personal'
+				>
+					{createThumbnail('individual')}
+				</JobsShelf>
 
-					<p className="disclaimer">
-						*Some of the projects were developed as a team
-					</p>
-				</div>
-				{/* {
-					this.state.zoomImage !== '' && window.innerWidth > 920 &&
-					<ImageZoom
-						image={this.state.zoomImage}
-						close={() => {this.setState({zoomImage: ''})}}
-					/>
-				} */}
-			</>
-		)
-	}
+				<p className="disclaimer">
+					*Some of the projects were developed as a team
+				</p>
+			</div>
+			{/* {
+				state.zoomImage !== '' && window.innerWidth > 920 &&
+				<ImageZoom
+					image={state.zoomImage}
+					close={() => {setState({zoomImage: ''})}}
+				/>
+			} */}
+		</>
+	)
 }
+
+export default Jobs;
