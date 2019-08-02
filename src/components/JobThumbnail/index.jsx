@@ -4,7 +4,7 @@ import './style.scss';
 
 const JobThumbnail = props => {
 	return (
-		<div className="thumbnail" onClick={props.handleClick}>
+		<div className={`thumbnail ${props.link ? '' : 'disabled'}`} onClick={props.handleClick}>
 			<a href={props.link ? props.link + '?utm_campaign=brunodev' : 'javascript:void(0)'} target='_blank' rel="noopener noreferrer">
 				<figure>
 					<img src={props.image} alt=""/>
