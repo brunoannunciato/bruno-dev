@@ -3,7 +3,9 @@
 	position: relative;
 
 	&.disabled {
-		order: 1;
+        order: 1;
+        
+        a { pointer-events: none; }
 
 		@media (max-width: 920px) {
 
