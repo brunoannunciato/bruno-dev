@@ -14,6 +14,7 @@ const Menu = props => {
 
 			<Link to='/'>
 				<Icon
+					removeLink={true}
 					icon="cross"
 					className="icon-close-menu"
 					handleClick={props.closeClick}
