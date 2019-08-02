@@ -155,7 +155,7 @@ const jobsList = {
 }
 
 const Jobs= () => {
-	const [zoomImage, setZoomImage] = useState('');
+	const [, setZoomImage] = useState('');
 
 
 	const createThumbnail = entity => {
