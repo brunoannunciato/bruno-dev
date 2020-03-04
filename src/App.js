@@ -7,7 +7,7 @@ import ContactShelf from './widgets/ContactShelf';
 import PageContent from './widgets/PageContent';
 
 const App = () => {
-	const [activeMenu, setActiveMenu] = useState(false);
+	const [activeMenu, setActiveMenu] = useState(true);
 	const [activePage, setActivePage] = useState(false);
 
 	useEffect(() => {

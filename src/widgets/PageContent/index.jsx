@@ -5,6 +5,7 @@ import Icon from '../../components/Icons';
 
 import About from '../../pages/About';
 import Jobs from '../../pages/Jobs';
+import NotFound from '../../pages/NotFound';
 
 import './style.scss';
 
@@ -13,6 +14,7 @@ const PageContent = props => {
 		<section className={`page-content ${ props.active ? 'active' : ''}`}>
 			<Route path='/about' component={About}/>
 			<Route path='/jobs' component={Jobs}/>
+			<Route component={NotFound}/>
 
 			{
 				window.innerWidth <= 920 &&
