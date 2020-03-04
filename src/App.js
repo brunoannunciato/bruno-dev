@@ -35,8 +35,9 @@ const App = () => {
 			/>
 
 			<PageContent
-				active={activePage}
+				active={ activePage }
 				back={() => {setActivePage(false)}}
+				menuOpened={ activeMenu }
 			/>
 		</div>
 	)

@@ -15,7 +15,7 @@ const PageContent = props => {
 			<Switch>
 				<Route path='/about' component={About}/>
 				<Route path='/jobs' component={Jobs}/>
-				<Route exact component={NotFound}/>
+				{ props.menuOpened && <Route exact component={NotFound}/> }
 			</Switch>
 
 			{
