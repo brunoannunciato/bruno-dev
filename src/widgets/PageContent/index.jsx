@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Icon from '../../components/Icons';
 
@@ -12,9 +12,11 @@ import './style.scss';
 const PageContent = props => {
 	return (
 		<section className={`page-content ${ props.active ? 'active' : ''}`}>
-			<Route path='/about' component={About}/>
-			<Route path='/jobs' component={Jobs}/>
-			<Route component={NotFound}/>
+			<Switch>
+				<Route path='/about' component={About}/>
+				<Route path='/jobs' component={Jobs}/>
+				<Route exact component={NotFound}/>
+			</Switch>
 
 			{
 				window.innerWidth <= 920 &&
