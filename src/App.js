@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import './app.scss';
+import React, { useState, useEffect } from 'react'
+import './app.scss'
 
-import Header from './widgets/Header';
-import Presentation from './widgets/Presentation';
-import ContactShelf from './widgets/ContactShelf';
-import PageContent from './widgets/PageContent';
+import Header from './widgets/Header'
+import Presentation from './widgets/Presentation'
+import ContactShelf from './widgets/ContactShelf'
+import PageContent from './widgets/PageContent'
+
+const isMobileDevide = () => {
+	return window.innerWidth >= 920 ? true : false
+}
 
 const App = () => {
-	const [activeMenu, setActiveMenu] = useState(true);
-	const [activePage, setActivePage] = useState(false);
+	const [activeMenu, setActiveMenu] = useState(isMobileDevide())
+	const [activePage, setActivePage] = useState(false)
 
 	useEffect(() => {
 		if (window.location.pathname !== '/') {
@@ -43,4 +47,4 @@ const App = () => {
 	)
 }
 
-export default App;
+export default App
