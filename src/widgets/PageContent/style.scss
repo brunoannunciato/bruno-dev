@@ -13,8 +13,10 @@ section.page-content {
 	
 	@media (max-width: 920px) {
 		padding-left: 0;
-		z-index: 2;
+		right: 0;
+		transform: translateX(0105%);
 		width: 100%;
+		z-index: 2;
 	}
 	
 	.close-button {

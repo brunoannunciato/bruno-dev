@@ -37,12 +37,14 @@ const App = () => {
 				activePage={ (activePage = true) => { setActivePage(activePage)} }
 				toggleMenu={ () => setActiveMenu(!activeMenu) }
 			/>
-
-			<PageContent
-				active={ activePage }
-				back={() => {setActivePage(false)}}
-				menuOpened={ activeMenu }
-			/>
+			{
+				activePage &&
+				<PageContent
+					active={ activePage }
+					back={() => {setActivePage(false)}}
+					menuOpened={ activeMenu }
+				/>
+			}
 		</div>
 	)
 }
